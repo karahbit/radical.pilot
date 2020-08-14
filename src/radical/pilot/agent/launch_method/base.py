@@ -85,6 +85,7 @@ class LaunchMethod(object):
         self.name     = name
         self._cfg     = cfg
         self._session = session
+        self._prof    = self._session._prof   # pylint: disable=protected-access
         self._log     = self._session._log    # pylint: disable=protected-access
         self._log.debug('create LaunchMethod: %s', type(self))
 
