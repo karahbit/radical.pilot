@@ -310,15 +310,17 @@ class PRTE(LaunchMethod):
             map_flag += ' -host %s' % hosts.rstrip(',')
 
         # Additional (debug) arguments to prun
-        debug_string = ''
         if self._verbose:
-            debug_string += ' '.join([
-                                        '-verbose',
-                                      # '--debug-devel',
-                                      # '-display-devel-map',
-                                      # '-display-allocation',
-                                        '--report-bindings',
-                                     ])
+            debug_string = ' '.join([
+                                       '-verbose',
+                                     # '--debug-devel',
+                                     # '-display-devel-map',
+                                     # '-display-allocation',
+                                       '--report-bindings',
+                                    ])
+        elif profiler.enabled:
+            debug_string = '-verbose'
+
 
       # env_string = ''  # FIXME
         command = '%s --hnp "%s" %s %s %s %s' % (self.launch_command,

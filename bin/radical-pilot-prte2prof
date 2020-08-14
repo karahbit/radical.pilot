@@ -108,8 +108,9 @@ def handle_line(prof, line, pid, idmap):
                   # timestamp=tstamp, comp='prte.dvm', tid=dvm, msg=node)
                   ts=tstamp, comp='prte.dvm', tid=dvm, msg=node)
     except Exception as e:
-        print('skip line: %s' % str(e))
-        print(line)
+        sys.stdout.write('x')
+      # print('skip line: %s' % str(e))
+      # print(line)
 
 
 # ------------------------------------------------------------------------------
