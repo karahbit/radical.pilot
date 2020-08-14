@@ -318,7 +318,7 @@ class PRTE(LaunchMethod):
                                      # '-display-allocation',
                                        '--report-bindings',
                                     ])
-        elif profiler.enabled:
+        elif self._prof.enabled:
             debug_string = '-verbose'
 
 
